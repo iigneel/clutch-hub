@@ -220,5 +220,3 @@
 .animate-drift { animation: drift 12s ease-in-out infinite; }
 .animate-spin-slow { animation: spin-slow 30s linear infinite; }
 .animate-rise { animation: rise 0.8s ease-out both; }
-  }
-}
