@@ -57,7 +57,6 @@ function Index() {
     <div className="relative min-h-screen overflow-hidden text-foreground">
       <CursorGlow />
       <div className="pointer-events-none fixed inset-0 z-0 grid-bg" />
-
       <Nav />
       <Hero />
       <Marquee />
@@ -89,7 +88,7 @@ function Nav() {
           <a href="#india" className="transition-colors hover:text-foreground">India</a>
           <a href="#join" className="transition-colors hover:text-foreground">Early Access</a>
         </nav>
-        <a
+        
           href="#join"
           className="hidden rounded-full glass px-5 py-2 text-sm font-semibold transition-all hover:glow-purple md:inline-block"
         >
@@ -104,16 +103,15 @@ function Hero() {
   return (
     <section className="relative z-10 px-6 pt-10 pb-24 md:pt-20 md:pb-32">
       <Particles count={70} />
-      {/* radial blobs */}
       <div
         aria-hidden
         className="pointer-events-none absolute -top-32 left-1/4 h-[500px] w-[500px] rounded-full blur-3xl animate-pulse-glow"
-        style={{ background: "oklch(0.55 0.28 305 / 0.35)" }}
+        style={{ background: "oklch(0.55 0.12 72 / 0.35)" }}
       />
       <div
         aria-hidden
         className="pointer-events-none absolute top-40 right-10 h-[420px] w-[420px] rounded-full blur-3xl animate-pulse-glow"
-        style={{ background: "oklch(0.65 0.22 240 / 0.30)", animationDelay: "1.5s" }}
+        style={{ background: "oklch(0.45 0.09 65 / 0.30)", animationDelay: "1.5s" }}
       />
 
       <div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.05fr_1fr] lg:items-center">
@@ -141,7 +139,7 @@ function Hero() {
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
-            <a
+            
               href="#join"
               className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full px-8 py-4 text-sm font-bold uppercase tracking-wider text-primary-foreground transition-transform hover:scale-[1.03]"
               style={{ background: "var(--gradient-primary)", boxShadow: "var(--glow-purple)" }}
@@ -165,7 +163,6 @@ function Hero() {
           </div>
         </div>
 
-        {/* 3D hero visual */}
         <div className="relative perspective-1000">
           <TiltCard max={8} className="relative">
             <div className="relative overflow-hidden rounded-3xl glass glow-purple">
@@ -176,8 +173,7 @@ function Hero() {
                 height={1024}
                 className="h-full w-full object-cover"
               />
-              <div className="pointer-events-none absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 40%, oklch(0.08 0.02 280 / 0.7))" }} />
-              {/* HUD chips */}
+              <div className="pointer-events-none absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 40%, oklch(0.07 0.008 60 / 0.7))" }} />
               <div className="absolute left-4 top-4 flex flex-col gap-2">
                 <HudChip label="MATCHING" value="98%" />
                 <HudChip label="LATENCY" value="12ms" tone="blue" />
@@ -202,7 +198,6 @@ function Hero() {
             </div>
           </TiltCard>
 
-          {/* floating card */}
           <div className="absolute -left-6 -bottom-10 hidden w-64 animate-float-slow md:block">
             <div className="glass rounded-2xl p-4 glow-blue">
               <div className="flex items-center justify-between">
@@ -212,7 +207,7 @@ function Hero() {
               <div style={ORBITRON} className="mt-2 text-lg font-bold">BGMI · TPP</div>
               <div className="mt-3 flex -space-x-2">
                 {[0,1,2,3].map(i => (
-                  <div key={i} className="h-8 w-8 rounded-full border-2" style={{ borderColor: "oklch(0.08 0.02 280)", background: `linear-gradient(135deg, oklch(0.5${i+1} 0.25 ${280 + i*15}), oklch(0.7 0.20 ${230 + i*10}))` }} />
+                  <div key={i} className="h-8 w-8 rounded-full border-2" style={{ borderColor: "oklch(0.07 0.008 60)", background: `linear-gradient(135deg, oklch(0.${5+i} 0.12 ${70 + i*5}), oklch(0.4 0.08 65))` }} />
                 ))}
               </div>
             </div>
@@ -318,7 +313,7 @@ function SquadShowcase() {
         <TiltCard max={6}>
           <div className="relative overflow-hidden rounded-3xl glass glow-blue">
             <img src={squadCards} alt="Floating holographic squad cards" width={1280} height={896} loading="lazy" className="h-full w-full object-cover" />
-            <div className="pointer-events-none absolute inset-0" style={{ background: "linear-gradient(0deg, oklch(0.08 0.02 280 / 0.6), transparent 60%)" }} />
+            <div className="pointer-events-none absolute inset-0" style={{ background: "linear-gradient(0deg, oklch(0.07 0.008 60 / 0.6), transparent 60%)" }} />
           </div>
         </TiltCard>
 
@@ -376,7 +371,7 @@ function GamesSection() {
               <div
                 className="absolute inset-0 opacity-30 transition-opacity group-hover:opacity-60"
                 style={{
-                  background: `radial-gradient(circle at 30% 20%, ${i % 2 ? "oklch(0.65 0.25 250 / 0.5)" : "oklch(0.55 0.28 305 / 0.5)"}, transparent 60%)`,
+                  background: `radial-gradient(circle at 30% 20%, ${i % 2 ? "oklch(0.65 0.11 78 / 0.5)" : "oklch(0.55 0.10 68 / 0.5)"}, transparent 60%)`,
                 }}
               />
               <div className="relative flex h-full flex-col justify-between">
@@ -429,17 +424,14 @@ function IndiaSection() {
           <TiltCard max={10}>
             <div className="relative overflow-hidden rounded-3xl glass glow-purple">
               <img src={indiaMap} alt="Futuristic holographic 3D map of India with gaming network nodes" width={1024} height={1024} loading="lazy" className="h-full w-full object-cover" />
-              {/* scan line */}
               <div
                 aria-hidden
                 className="pointer-events-none absolute inset-x-0 h-24 opacity-60"
                 style={{
-                  background:
-                    "linear-gradient(180deg, transparent, oklch(0.72 0.22 235 / 0.4), transparent)",
+                  background: "linear-gradient(180deg, transparent, oklch(0.72 0.13 78 / 0.35), transparent)",
                   animation: "scan 6s linear infinite",
                 }}
               />
-              {/* floating node pings */}
               {[
                 { t: "28%", l: "42%", c: "Mumbai" },
                 { t: "20%", l: "60%", c: "Delhi" },
@@ -449,7 +441,7 @@ function IndiaSection() {
                 <div key={p.c} className="absolute" style={{ top: p.t, left: p.l }}>
                   <span className="absolute -inset-3 animate-ping rounded-full" style={{ background: "var(--neon-blue)", opacity: 0.4 }} />
                   <span className="block h-2 w-2 rounded-full" style={{ background: "var(--neon-blue)", boxShadow: "0 0 12px var(--neon-blue)" }} />
-                  <span className="absolute left-4 top-[-4px] whitespace-nowrap text-[10px] font-bold uppercase tracking-widest" style={{ color: "oklch(0.92 0.10 235)" }}>{p.c}</span>
+                  <span className="absolute left-4 top-[-4px] whitespace-nowrap text-[10px] font-bold uppercase tracking-widest" style={{ color: "oklch(0.82 0.14 82)" }}>{p.c}</span>
                 </div>
               ))}
             </div>
